@@ -1,0 +1,21 @@
+<div id="container">
+        <h3>Adicionar Tarefa</h3>
+        <input id="nova-tarefa" type="text" [(ngModel)]="tarefa">
+        <button id="adicionar-tarefa" (click) ="salvar()">Adicionar</button>
+
+        <h3>Pendentes</h3>
+        <ul id = "pendentes">
+            <li *ngFor = "let tar of tarefas_pendentes">
+                <input type="checkbox" (click)= "mudar(tar)">
+                {{tar.nome}}
+                <button (click) = "editar(tar)">Editar</button>
+                <button (click) = "excluir(tar)">Excluir</button>
+            </li>
+        </ul>
+        <h3>Executadas</h3>
+        <ul id="completas">
+            <li *ngFor = "let tar of tarefas_executadas">
+                {{tar.nome}}
+            </li>
+        </ul>
+</div>
